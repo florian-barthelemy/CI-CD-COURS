@@ -1,0 +1,11 @@
+name: Next one
+on:
+  workflow_run:
+    workflows: [Close PR]
+    types: [completed]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: after close PR
+        run: echo "Après la tâche close PR"
