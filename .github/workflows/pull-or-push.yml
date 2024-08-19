@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display push message
-        run: echo "${{PUSH_MESSAGE}}"
+        run: echo $PUSH_MESSAGE
   check-pr:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: display pull request message
-        run: echo "${{PULL_MESSAGE}}"
+        run: echo $PULL_MESSAGE
 
