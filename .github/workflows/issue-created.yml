@@ -1,0 +1,10 @@
+name: Issue Created
+on:
+  issues:
+    types: [opened]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify issue created
+        run: "Issue created."
