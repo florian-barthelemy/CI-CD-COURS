@@ -1,0 +1,21 @@
+name: pull
+env: 
+  PULL_MESSAGE: "C'est une pull request!"
+  PUSH_MESSAGE: "C'est un push!"
+on:
+  pull_request:
+  push:
+jobs:
+  check-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: display push message
+        run: echo "${{PUSH_MESSAGE}}"
+  check-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: display pull request message
+        run: echo "${{PULL_MESSAGE}}"
+
