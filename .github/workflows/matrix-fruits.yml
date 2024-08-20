@@ -1,0 +1,15 @@
+name: matrix fruits
+on:
+  workflow_dispatch:
+jobs:
+  lists-jobs:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        fruits : ["pomme", "fraise", "poire", "pêche"]
+        names: ["Marc", "Paul", "Michel"]
+    steps:
+      - name: display combination
+        run: echo "${{matrix.names}} mange une ${{matrix.fruits}}, et il adore ca!"
+
